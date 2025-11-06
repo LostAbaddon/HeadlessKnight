@@ -1,0 +1,50 @@
+{
+  "name": "headless-knight",
+  "version": "1.0.0",
+  "description": "无头骑士 - 通过 MCP 服务和 Slash Commands 调用 Claude Code、Gemini CLI、Codex CLI 等 AI CLI 工具的插件",
+  "author": {
+    "name": "LostAbaddon",
+    "email": "lostabaddon@gmail.com",
+    "url": "https://lostabaddon.github.io/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "headless",
+    "automation",
+    "process-management",
+    "claude-code",
+    "gemini-cli",
+    "codex-cli"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ${CLAUDE_PLUGIN_ROOT}/hooks/session-start.js"
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@upstash/context7-mcp"
+      ],
+      "env": {}
+    },
+    "runCLI": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/mcp/cli-runner-server.js"
+      ]
+    }
+  }
+}
