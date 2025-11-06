@@ -160,6 +160,19 @@ mcp__plugin_headless-knight_cli-runner__claude
 
 ---
 
+## Marketplace
+
+本项目已上架至[自建 Marketplace](https://github.com/lostabaddon/CCMarketplace)，其中还会不断更新和上架更多 Plugin，敬请期待！
+
+---
+
+## 相关项目
+
+- **[InfoCollector](https://github.com/lostabaddon/InfoCollector)**: 收集资料与深度调查的 Plugin，配合本插件的 GeminiCLI，威力强大！
+- **[ComplexMissionManager](https://github.com/lostabaddon/ComplexMissionManager)**: 大型任务的并行拆解与执行的插件，配合本插件，威力强大！
+
+---
+
 ## 许可证
 
 本项目采用 [MIT License](LICENSE) 许可证。
