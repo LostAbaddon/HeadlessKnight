@@ -1,6 +1,6 @@
 # HeadlessKnight - 无头骑士
 
-- 版本: 1.0.0
+- 版本: 1.0.1
 
 让 Claude Code 具备调用 Claude Code、Gemini CLI、Codex CLI 等 AI CLI 工具能力的 Claude Code 插件。
 
@@ -181,10 +181,12 @@ mcp__plugin_headless-knight_cli-runner__claude
 
 ## 更新日志
 
-### v1.0.0 (2025-11-06)
+### v1.0.1 (2025-11-07)
+- ✨ 新增对 iFlow 的支持
 
-- ✨ 统一的 MCP 服务架构
-- ✨ 3 个 Slash Commands
+### v1.0.0 (2025-11-06)
+- ✅ 统一的 MCP 服务架构
+- ✅ 3 个 Slash Commands
 - ✅ 支持 Claude Code、Gemini CLI、Codex CLI
 - ✅ 通过 Bash 脚本调用
 - ✅ 基本的独立进程运行能力

@@ -13,6 +13,7 @@ const {
 	runClaudeCode,
 	runCodex,
 	runGemini,
+	runIFlow,
 } = require('../lib/headless');
 const { log } = require('../lib/utils');
 
@@ -61,6 +62,8 @@ const CodexInputSchema = JSON.parse(JSON.stringify(InputSchema));
 CodexInputSchema.properties.model.description = '指定使用哪个模型，取值为"gpt-5"、"gpt-5-mini"、"gpt-5-nano"、"gpt-4.1"、"gpt-4.1-mini"、"gpt-4.1-nano"或"o3"等 OpenAI 的 GPT 系列模型的代号，可选，默认为 gpt-5-codex';
 const GeminiInputSchema = JSON.parse(JSON.stringify(InputSchema));
 GeminiInputSchema.properties.model.description = '指定使用哪个模型，取值为"gemini-2.5-pro"、"gemini-2.5-flash"或"gemini-2.5-flash-lite"等 Gemini 系列模型的代号，可选，默认为 gemini-2.5-pro';
+const IFlowInputSchema = JSON.parse(JSON.stringify(InputSchema));
+IFlowInputSchema.properties.model.description = '指定使用哪个模型，取值为"GLM-4.6"、"Qwen3-Coder-Plus"、"DeepSeek-V3.2"或"Kimi-K2-0905"等模型代号，可选，默认为 GLM-4.6';
 
 const callCLIRunner = async (tag, runner, args) => {
 	try {
@@ -117,6 +120,11 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 				description: '向助手发出协助请求，适用于长文阅读理解、网络搜索、网页读取等任务场景。',
 				inputSchema: GeminiInputSchema
 			},
+			{
+				name: 'iflow',
+				description: '向助手发出协助请求，适用中华文化理解、中文古文理解、中国特色作品创作、小红书与抖音的宣发文案编写、编写测试用例、信息检索等任务场景。',
+				inputSchema: IFlowInputSchema
+			},
 		]
 	};
 });
@@ -134,6 +142,10 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 	if (name === 'gemini') {
 		return await callCLIRunner('GeminiCLI', runGemini, args);
+	}
+
+	if (name === 'iflow') {
+		return await callCLIRunner('iFLow', runIFlow, args);
 	}
 
 	throw new Error(`未知工具: ${name}`);
