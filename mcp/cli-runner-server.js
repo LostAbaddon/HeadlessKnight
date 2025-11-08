@@ -17,6 +17,8 @@ const {
 } = require('../lib/headless');
 const { log } = require('../lib/utils');
 
+const ModuleName = 'MCP';
+
 // 创建 MCP 服务器
 const server = new Server(
 	{
@@ -69,7 +71,7 @@ const callCLIRunner = async (tag, runner, args) => {
 	try {
 		// 执行任务
 		const result = await runner(args);
-		log('INFO', tag + ' Process Finished.', result);
+		log('INFO', ModuleName, tag + ' Process Finished.', result);
 
 		// 返回结果
 		return {
@@ -85,7 +87,7 @@ const callCLIRunner = async (tag, runner, args) => {
 		};
 	}
 	catch (error) {
-		log('ERROR', tag + ' Failed:', error.message || error.msg || error.data || error.toString());
+		log('ERROR', ModuleName, tag + ' Failed:', error.message || error.msg || error.data || error.toString());
 		return {
 			content: [
 				{
@@ -155,9 +157,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
 	const transport = new StdioServerTransport();
 	await server.connect(transport);
-	log('INFO', 'MCP Server 已启动');
+	log('INFO', ModuleName, 'Server 已启动');
 }
 
 main().catch(err => {
-	log('ERROR', 'MCP Error:', err.message || err.msg || err.data || err.toString());
+	log('ERROR', ModuleName, 'Error:', err.message || err.msg || err.data || err.toString());
 });

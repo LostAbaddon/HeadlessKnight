@@ -1,6 +1,6 @@
 # HeadlessKnight - 无头骑士
 
-- 版本: 1.0.1
+- 版本: 1.0.2
 
 让 Claude Code 具备调用 Claude Code、Gemini CLI、Codex CLI 等 AI CLI 工具能力的 Claude Code 插件。
 

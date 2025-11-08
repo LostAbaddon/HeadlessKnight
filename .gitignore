@@ -12,6 +12,7 @@ yarn.lock
 # Logs
 *.log
 logs/
+action_record.json
 
 # Test coverage
 coverage/
