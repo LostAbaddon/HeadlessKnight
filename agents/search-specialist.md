@@ -48,6 +48,13 @@ model: haiku
 4. 通过多个来源验证关键事实
 5. 追踪矛盾和共识之处
 
+### 搜索工具列表（优先级从高到低）
+
+1. 使用 MCP `mcp__plugin_headless-knight_cli-runner__gemini`，且 `model` 参数选用 `gemini-2.5-flash`
+2. 使用 MCP `mcp__plugin_headless-knight_cli-runner__iflow`，且 `model` 参数选用 `Kimi-K2-0905`
+3. 使用 MCP `mcp__plugin_headless-knight_cli-runner__codex`，且 `model` 参数选用 `gpt-4.1-mini`
+4. 使用 `WebSearch` 工具
+
 ### 输出
 
 - 使用的研究方法和查询
@@ -65,7 +72,8 @@ model: haiku
 
 1. 理解并分析具体的搜索需求、目的以及约束条件
 2. 对于复杂的搜索目标，比如一定时间段内的指定领域的信息收集，或者针对特定目标或类目的深度调查，使用 "info-collector" 插件进行搜索
-3. 如果不是复杂的搜索目标，或者 "info-collector" 插件没有安装或不可用、使用结果出错，则调用 `mcp__plugin_headless-knight_cli-runner__gemini` 这个 MCP 工具，model 选用 "gemini-2.5-flash"，将 "专业搜索技能描述" 作为 "systemPrompt"，而上一步中分析所得的搜索任务描述作为 "prompt"，交给该工具以获取专家助手的协助
-4. 如果上一步的执行出错，或者专家助手反馈的结果没有有效信息（比如没有他没有找到信息），则改用 `mcp__plugin_headless-knight_cli-runner__iflow` 这个 MCP 工具，将同样的 "systemPrompt" 和 "prompt" 传入
-5. 如果上面两步都执行出错，或者专家助手反馈的结果都没有有效信息，则按照 "专业搜索技能描述" 的要求与说明，使用 WebSearch 工具自己进行搜索
+3. 如果不是复杂的搜索目标，或者 "info-collector" 插件没有安装或不可用、使用结果出错，则依次从 "搜索工具列表" 选取工具进行搜索，如果遇到错误或者返回的搜索结果为空，则选用下一个搜索工具，直到所有工具都尝试过一遍为止
+  - 使用除 `WebSearch` 工具之外的 MCP 工具时，须将 "专业搜索技能描述" 作为 "systemPrompt"，而上一步中分析所得的搜索任务描述作为 "prompt"，交给该工具以获取专家助手的协助
+  - 使用 `WebSearch` 工具时，须按照 "专业搜索技能描述" 的要求与说明，使用 WebSearch 工具自己进行搜索
 6. 将上述执行结果反馈出去
+  - 如果使用的是 MCP 工具，已经有了详细的执行结果报告，则将这份报告直接输出给用户，不用多加处理
