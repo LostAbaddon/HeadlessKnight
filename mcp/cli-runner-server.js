@@ -61,11 +61,11 @@ const InputSchema = {
 const ClaudeInputSchema = JSON.parse(JSON.stringify(InputSchema));
 ClaudeInputSchema.properties.model.description = '指定使用哪个模型，取值为"sonnet"、"haiku"或"opus"之一，默认为 sonnet';
 const CodexInputSchema = JSON.parse(JSON.stringify(InputSchema));
-CodexInputSchema.properties.model.description = '指定使用哪个模型，取值为"gpt-5"、"gpt-5-mini"、"gpt-5-nano"、"gpt-4.1"、"gpt-4.1-mini"、"gpt-4.1-nano"或"o3"等 OpenAI 的 GPT 系列模型的代号，可选，默认为 gpt-5-codex';
+CodexInputSchema.properties.model.description = '指定使用哪个模型，取值为"gpt-5.1-codex"、"gpt-5.1"、"gpt-5-mini"、"gpt-5-nano"或"o3"等 OpenAI 的 GPT 系列模型的代号，可选，默认为 gpt-5.1-codex';
 const GeminiInputSchema = JSON.parse(JSON.stringify(InputSchema));
-GeminiInputSchema.properties.model.description = '指定使用哪个模型，取值为"gemini-2.5-pro"、"gemini-2.5-flash"或"gemini-2.5-flash-lite"等 Gemini 系列模型的代号，可选，默认为 gemini-2.5-pro';
+GeminiInputSchema.properties.model.description = '指定使用哪个模型，取值为"gemini-3-pro-preview"、"gemini-2.5-flash"或"gemini-2.5-flash-lite"等 Gemini 系列模型的代号，可选，默认为 gemini-3-pro-preview';
 const IFlowInputSchema = JSON.parse(JSON.stringify(InputSchema));
-IFlowInputSchema.properties.model.description = '指定使用哪个模型，取值为"GLM-4.6"、"Qwen3-Coder-Plus"、"DeepSeek-V3.2"或"Kimi-K2-0905"等模型代号，可选，默认为 GLM-4.6';
+IFlowInputSchema.properties.model.description = '指定使用哪个模型，取值为"GLM-4.6"、"Qwen3-Coder-Plus"、"DeepSeek-V3.2"、"MiniMax-M2"或"Kimi-K2-0905"等模型代号，可选，默认为 GLM-4.6';
 
 const callCLIRunner = async (tag, runner, args) => {
 	try {

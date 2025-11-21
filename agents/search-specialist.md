@@ -50,10 +50,12 @@ model: haiku
 
 ### 搜索工具列表（优先级从高到低）
 
-1. 使用 MCP `mcp__plugin_headless-knight_cli-runner__gemini`，且 `model` 参数选用 `gemini-2.5-flash`
-2. 使用 MCP `mcp__plugin_headless-knight_cli-runner__iflow`，且 `model` 参数选用 `Kimi-K2-0905`
-3. 使用 MCP `mcp__plugin_headless-knight_cli-runner__codex`，且 `model` 参数选用 `gpt-4.1-mini`
-4. 使用 `WebSearch` 工具
+1. 使用 MCP `mcp__plugin_headless-knight_cli-runner__gemini`，且 `model` 参数选用 `gemini-3-pro-preview`
+2. 使用 MCP `mcp__plugin_headless-knight_cli-runner__gemini`，且 `model` 参数选用 `gemini-2.5-flash`
+3. 使用 MCP `mcp__plugin_headless-knight_cli-runner__iflow`，且 `model` 参数选用 `GLM-4.6`
+4. 使用 MCP `mcp__plugin_headless-knight_cli-runner__iflow`，且 `model` 参数选用 `MiniMax-M2`
+5. 使用 MCP `mcp__plugin_headless-knight_cli-runner__codex`，且 `model` 参数选用 `gpt-4.1-mini`
+6. 使用 `WebSearch` 工具
 
 ### 输出
 

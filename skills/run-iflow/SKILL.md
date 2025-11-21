@@ -13,7 +13,7 @@ description: 向助手发出协助请求，适用中华文化理解、中文古�
 - `prompt`: string，从上下文整理出的完整的任务描述，必填参数
 - `systemPrompt`: string，从上下文整理出的需要该助手遵守的系统提示词，用于约束他的行为，可选
 - `workDir`: string，工作目录，默认为当前目录，可选
-- `model`: string，指定使用哪个模型，取值为"GLM-4.6"、"Qwen3-Coder-Plus"、"DeepSeek-V3.2"或"Kimi-K2-0905"等模型代号，可选，默认为 GLM-4.6
+- `model`: string，指定使用哪个模型，取值为"GLM-4.6"、"Qwen3-Coder-Plus"、"DeepSeek-V3.2"、"MiniMax-M2"或"Kimi-K2-0905"等模型代号，可选，默认为 MiniMax-M2
 - `env`: object，自定义环境变量，键值对，可选
 
 ## 模型选择
@@ -22,6 +22,7 @@ description: 向助手发出协助请求，适用中华文化理解、中文古�
 - Qwen3-Coder-Plus: 擅长阿里云用户或需要进行模型精调和私有化部署等任务
 - DeepSeek-V3.2: 擅长与编程相关的任务，如代码生成、Bug 修复、代码解释、算法设计、编写单元测试等
 - Kimi-K2-0905: 适用于需要处理大量文本信息的场景，如信息检索、长篇内容总结、知识库问答等
+- MiniMax-M2: 适用于上述各项任务
 
 ## 相关环境变量
 

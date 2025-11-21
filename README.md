@@ -1,6 +1,6 @@
 # HeadlessKnight - 无头骑士
 
-- 版本：1.1.2
+- 版本：1.1.3
 
 让 Claude Code 具备调用 Claude Code、Gemini CLI、Codex CLI 等 AI CLI 工具能力的 Claude Code 插件。
 
@@ -181,7 +181,7 @@ mcp__plugin_headless-knight_cli-runner__claude
 - `prompt` （必需）：任务描述
 - `systemPrompt`：系统提示
 - `workDir`：工作目录
-- `model`：模型名称（`gemini-2.5-pro` / `gemini-2.5-flash` / `gemini-2.5-flash-lite`）
+- `model`：模型名称（`gemini-3-pro-preview` / `gemini-2.5-flash` / `gemini-2.5-flash-lite`）
 - `env`：自定义环境变量（键值对对象）
 
 ### codex
@@ -192,7 +192,7 @@ mcp__plugin_headless-knight_cli-runner__claude
 - `prompt` （必需）：任务描述
 - `systemPrompt`：系统提示
 - `workDir`：工作目录
-- `model`：模型名称（`gpt-5` / `gpt-5-mini` / `gpt-5-nano` / `o3` 等）
+- `model`：模型名称（`gpt-5.1-codex` / `gpt-5.1` / `gpt-5-mini` / `gpt-5-nano` / `o3` 等）
 - `env`：自定义环境变量（键值对对象）
 
 ### iflow
@@ -203,7 +203,7 @@ mcp__plugin_headless-knight_cli-runner__claude
 - `prompt` （必需）：任务描述
 - `systemPrompt`：系统提示
 - `workDir`：工作目录
-- `model`：模型名称（`GLM-4.6` / `Qwen3-Coder-Plus` / `DeepSeek-V3.2` / `Kimi-K2-0905` 等）
+- `model`：模型名称（`GLM-4.6` / `Qwen3-Coder-Plus` / `DeepSeek-V3.2` / `Kimi-K2-0905` / `MiniMax M2` 等）
 - `env`：自定义环境变量（键值对对象）
 
 ---
@@ -257,6 +257,12 @@ mcp__plugin_headless-knight_cli-runner__claude
 ---
 
 ## 更新日志
+
+### v1.1.3 （2025-11-21）
+- 🔄 **模型更新**：更新默认模型版本（Gemini 3 Pro Preview、GPT-5.1 Codex、MiniMax M2）
+- ✨ **新增 Agent**：新增 5 个代码审查专家 Agent（代码质量、文档准确性、性能、安全、测试覆盖率）
+- 🔧 **搜索优化**：优化搜索工具优先级列表，新增更多搜索选项
+- 📊 **日志增强**：工具调用日志现在显示具体模型名称和任务提示
 
 ### v1.1.2 （2025-11-18）
 - 📝 **文档优化**：补充中文标点符号使用示例，提高规范的实用性和可读性
