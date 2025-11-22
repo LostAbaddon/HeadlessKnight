@@ -13,7 +13,7 @@ description: 向助手发出协助请求，适用于长文阅读理解、网络�
 - `prompt`: string，从上下文整理出的完整的任务描述，必填参数
 - `systemPrompt`: string，从上下文整理出的需要该助手遵守的系统提示词，用于约束他的行为，可选
 - `workDir`: string，工作目录，默认为当前目录，可选
-- `model`: string，指定使用哪个模型，取值为"gemini-3-pro-preview"、"gemini-2.5-flash"或"gemini-2.5-flash-lite"等模型的代号，可选，默认为 gemini-3-pro-preview
+- `model`: string，指定使用哪个模型，取值为"gemini-3-pro-preview"、"gemini-2.5-flash"或"gemini-2.5-flash-lite"等模型的代号，可选，默认为 gemini-2.5-flash
 - `env`: object，自定义环境变量，键值对，可选
 
 ## 模型选择
